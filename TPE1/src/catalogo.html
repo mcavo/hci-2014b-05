@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="img/logo.ico">
+		<title> Klosh </title>
+		<link href="./css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="./css/main.css" type="text/css" rel="stylesheet">
+		<link href="./css/catalogo.css" type="text/css" rel="stylesheet">
+		<link href="./css/categoriesautocomplete.css" type="text/css" rel="stylesheet">
+		<link rel="stylesheet" href="//ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+	</head>
+
+	<body>
+	<noscript>
+		<style type="text/css">
+		    .pagecontainer {display:none;}
+		</style>
+		<div class="noscriptmsg">
+		    <div class="col-md-12 col-sm-12" id="error-msg">
+		        <div class="alert alert-danger" role="alert">
+				Para utilizar las funcionalidades completas de este sitio es necesario tener
+				JavaScript habilitado. Aquí están las <a href="http://www.enable-javascript.com/es/"
+				target="_blank"> instrucciones para habilitar JavaScript en tu navegador web</a>.
+			</div>
+		    </div>
+		</div>
+	</noscript>
+	<div class="pagecontainer">
+		<!-- Header -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="img/logo.png"/></a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control searchbar" placeholder="¿Qué está buscando?" name="search">
+						</div>
+						<button type="submit" class="btn btn-default" formaction="catalogo.html">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a id="carrito" data-toggle="tooltip" data-placement="top" title="Carrito"> <img alt="Carrito de compras" src="./img/icon-carrito.png"/> <span id="cantprod" class="badge">0</span> </a>
+						</li>
+						<li>
+							<button id="ingresar" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+								INGRESAR
+							</button>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+			<ul class="nav navbar-middle">
+				<li class="col-md-2"></li>
+				<li class="dropdown dropdown-large col-md-2">
+					<a class="dropdown-toggle btn menubutton btn-group" href="mujer.html"> M U J E R </a>
+					<ul class="dropdown-menu dropdown-menu-large row" style="display: none; " role="menu" id="botonmujer">
+						<!-- esto eran todos los menus antes de hacerlo dinamico-->
+					</ul>
+				</li>
+				<li class="col-md-1"></li>
+				<li class="dropdown dropdown-large col-md-2">
+					<a class="dropdown-toggle btn menubutton" href="hombre.html"> H O M B R E </a>
+					<ul class="dropdown-menu dropdown-menu-large row" style="display: none; " role="menu" id="botonhombre"></ul>
+				</li>
+				<li class="col-md-1"></li>
+				<li class="dropdown dropdown-large col-md-2">
+					<a class="dropdown-toggle btn menubutton" href="ninio.html"> N I Ñ O </a>
+					<ul class="dropdown-menu dropdown-menu-large row" style="display: none; " role="menu" id="botonniño"></ul>
+				</li>
+			</ul>
+		</nav>
+
+		<div id="alerta" class="alert alert-success fade msgcart" data-alert="alert">
+			<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<strong>¡Bienvenido!</strong> Has ingresado exitósamente.
+		</div>
+
+		<div id="alerta5" class="alert alert-warning fade msgcart" data-alert="alert">
+			<strong>¡Espere! </strong>Debe ingresar con su cuenta para ir al carrito.
+		</div>
+
+		<div class="row">
+			<div class="col-md-12 offer">
+				<div class="col-md-3"></div>
+				<div class="col-md-9">
+					<ol class="breadcrumb pull-left">
+						<li>
+							<a href="index.html">Inicio</a>
+						</li>
+					</ol>
+					<ul class="pagination pull-right"></ul>
+				</div>
+				<!-- Categorias -->
+				<div class="col-md-3">
+					<div class="col-md-12 well">
+						<h3 class="col-md-12">FILTROS</h3>
+						<form id="filtros" name="filtros" class="col-md-12">
+							<!--
+							<label class="col-md-12 control-label">Categoría:</label>
+							<div>
+							<input type="text" id="txtcategoria" class="form-control" placeholder="Seleccione una categoría" />
+							</div>
+							<select id="categoria" class="form-control" style="clear: both;"></select>
+							-->
+							<label  class="col-md-12 control-label">Color:</label>
+							<select id="color" style="clear: both;" class="form-control">
+								<option value="0">Seleccione un color</option>
+							</select>
+							<label class="col-md-12 control-label">Marca:</label>
+							<select id="marca" style="clear: both;" class="form-control">
+								<option value="0">Seleccione una marca</option>
+							</select>
+							<label class="col-md-12 control-label">Ocasión:</label>
+							<select id="ocasion" style="clear: both;" class="form-control">
+								<option value="0">Seleccione una ocasión</option>
+							</select>
+
+						</form>
+					</div>
+					<div class="col-sm-offset-3 col-sm-5">
+						<button class="btn btn-primary" id="filtrar">
+							APLICAR FILTROS
+						</button>
+					</div>
+				</div>
+
+				<!-- Productos -->
+				<div class="col-md-9">
+					<div class="sort">
+
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for="sortProducts" class="col-sm-2 control-label">Ordenar por:</label>
+								<div class="col-sm-2">
+									<select id="sort-key" style="clear: both;" class="form-control">
+										<option value="0">Seleccione</option>
+										<option value="2">Nombre</option>
+										<option value="4">Precio</option>
+										<option value="8">Marca</option>
+									</select>
+								</div>
+								<div class="sort-order col-sm-2">
+									<select id="sort-order" style="clear: both;" class="form-control hide">
+										<option value="1">Ascendente</option>
+										<option value="3">Descendente</option>
+									</select>
+								</div>
+								<div class="col-sm-1">
+									<button class="btn btn-primary hide" id="sortBtn">
+										APLICAR
+									</button>
+								</div>
+
+							</div>
+						</form>
+
+					</div>
+
+					<div id="productos" class="col-md-12"></div>
+
+				</div>
+
+				<ul class="pagination pull-right"></ul>
+
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<div class="navbar-inverse navbar-static-bottom footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<h3>Seguinos</h3>
+						<ul>
+							<li>
+								<a href="construccion.html">Facebook</a>
+							</li>
+							<li>
+								<a href="construccion.html">Twitter</a>
+							</li>
+							<li>
+								<a href="construccion.html">Instagram</a>
+							</li>
+							<li>
+								<a href="construccion.html">Youtube</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h3>Klosh</h3>
+						<ul>
+							<li>
+								<a href="construccion.html">Cómo comprar</a>
+							</li>
+							<li>
+								<a href="construccion.html">Políticas de privacidad</a>
+							</li>
+							<li>
+								<a href="construccion.html">Plazos de entrega</a>
+							</li>
+							<li>
+								<a href="construccion.html">Términos y condiciones</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h3>Empresa</h3>
+						<ul>
+							<li>
+								<a href="construccion.html">Atención al cliente</a>
+							</li>
+							<li>
+								<a href="construccion.html">Institucional</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Inicio de Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">INGRESAR</h4>
+						<h4 id="datosObligatorios"> Todos los campos de la sección a completar son obligatorios. </h4>
+					</div>
+					<div class="modal-body col-md-12">
+						<div class="row col-md-6">
+							<div class="col-md-12">
+								<h3> SOY USUARIO</h3>
+							</div>
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="inputUsuario" class="col-sm-5 control-label">Nombre de usuario</label>
+									<div class="col-sm-7">
+										<input type="usuario" class="form-control" id="inputUsuario3" placeholder="Usuario" name="inputUsuario3">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputContraseña" class="col-sm-5 control-label">Contraseña</label>
+									<div class="col-sm-7">
+										<input type="password" class="form-control" id="inputContraseña3" placeholder="Contraseña" name="inputContraseña3">
+									</div>
+								</div>
+								<div class="form-group">
+										<ul id="errores1" class="list-group">
+								 		
+										</ul>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-5 col-sm-5">
+										<button type="button" id="ingresar3" class="btn btn-primary">
+											Ingresar
+										</button>
+									</div>
+								</div>
+								<p>
+									<a class="col-md-offset-6 col-md-6" href="construccion.html">Olvidé mi contraseña</a>
+								</p>
+							</form>
+						</div>
+						<div id="columna2" class="row col-md-6">
+							<div class="col-md-12">
+								<h3> SOY NUEVO AQUÍ</h3>
+							</div>
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="inputUsuario" class="col-sm-5 control-label">Nombre de usuario</label>
+									<div class="col-sm-7">
+										<input type="usuario" class="form-control" id="inputUsuario" placeholder="Ej.: fandeklosh94">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputContraseña" class="col-sm-5 control-label">Contraseña</label>
+									<div class="col-sm-7">
+										<input type="password" class="form-control" id="inputContraseña" placeholder="Contraseña">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputContraseña" class="col-sm-5 control-label">Repetir contraseña</label>
+									<div class="col-sm-7">
+										<input type="password" class="form-control" id="inputContraseña2" placeholder="Repetir contraseña">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputNombre" class="col-sm-5 control-label">Nombre</label>
+									<div class="col-sm-7">
+										<input type="nombre" class="form-control" id="inputNombre" placeholder="Ej.: Mario">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputApellido" class="col-sm-5 control-label">Apellido</label>
+									<div class="col-sm-7">
+										<input type="apellido" class="form-control" id="inputApellido" placeholder="Ej.: Perez">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-5 control-label">Género</label>
+									<label class="radio-inline col-sm-3">
+										<input type="radio" checked="checked" name="GeneroRadioOptions" id="radio1" value="option1">
+										Masculino </label>
+									<label class="radio-inline">
+										<input type="radio" name="GeneroRadioOptions" id="radio2" value="option2">
+										Femenino </label>
+								</div>
+								<div class="form-group">
+									<label for="inputDNI" class="col-sm-5 control-label">D.N.I.</label>
+									<div class="col-sm-7">
+										<input type="dni" class="form-control" id="inputDNI" placeholder="Ej.: 35.678.993">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="inputBirth" class="col-sm-5 control-label">Fecha nacimiento</label>
+									<div class="col-sm-7">
+										<input type="birth" class="form-control" id="inputBirth" placeholder="Ej.: 1994-05-23">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="inputEmail" class="col-sm-5 control-label">E-mail</label>
+									<div class="col-sm-7">
+										<input type="email" class="form-control" id="inputEmail" placeholder="Ej.: marioperez@gmail.com">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputEmail" class="col-sm-5 control-label">Repetir e-mail</label>
+									<div class="col-sm-7">
+										<input type="email" class="form-control" id="inputEmail2" placeholder="Repetir e-mail">
+									</div>
+								</div>
+								<div class="form-group">
+										<ul id="errores2" class="list-group">
+								 		
+										</ul>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-7 col-sm-5">
+										<button type="button" id="registrarse" class="btn btn-primary">
+											Registrarse
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Fin de Modal -->
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.js"></script>
+		<script src="js/catalogo.js"></script>
+		<script src="js/main.js"></script>
+	</div>
+	</body>
+
+</html>

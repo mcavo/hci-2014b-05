@@ -1,0 +1,17 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.klosh.MainActivity" >
+
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/search"
+        android:showAsAction="always"
+       	android:actionViewClass="android.widget.SearchView"
+        android:title=""/>
+    <item
+        android:id="@+id/contact"
+        android:icon="@drawable/user"
+        android:showAsAction="always"
+        android:title=""/>
+
+</menu>

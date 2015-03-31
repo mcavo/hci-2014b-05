@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="klosh">Klosh</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="hombreDesc">Access to mens menu</string>
+    <string name="mujerDesc">Access to womens menu</string>
+    <string name="ninioDesc">Access to kids menu</string>
+    <string name="novedadesDesc">Access to news menu</string>
+    <string name="ofertasDesc">Access to offers menu</string>
+    <string name="inicio">HOME</string>
+    <string name="mujer">WOMEN</string>
+    <string name="hombre">MEN</string>
+    <string name="ninio">KID</string>
+    <string name="novedades">NEW</string>
+    <string name="ofertas">OFFER</string>
+    <string name="micuenta">MY ACCOUNT</string>
+    <string name="calzadoDesc">Access to footwears menu</string>
+    <string name="indumentariaDesc">Access to costumes menu</string>
+    <string name="accesoriosDesc">Access to fittings menu</string>
+    <string name="calzado">Footwear</string>
+    <string name="indumentaria">Costume</string>
+    <string name="accesorios">Fittings</string>
+    <string name="iniciar">LOG IN</string>
+    <string name="cerrar">LOG OUT</string>
+    <string name="usuario">Username:</string>
+    <string name="contrasena">Password:</string>
+    <string name="ingresar">LOG IN</string>
+    <string name="invalido">Invalid username or password!</string>
+    <string name="usuarioinvalido">Invalid username!</string>
+    <string name="contrasenainvalida">Invalid password!</string>
+    <string name="nombre">Name:</string>
+    <string name="apellido">Lastname:</string>
+    <string name="fechacreacion">Created date:</string>
+    <string name="ultimoinicio">Last sign in:</string>
+    <string name="informacion">Information</string>
+    <string name="pedidos">Orders</string>
+    <string name="numero">Number</string>
+    <string name="estado">State:</string>
+    <string name="coordenadas">Coordinates:</string>
+    <string name="direcciondeenvio">Delivery destiny:</string>
+    <string name="fechaentrega">Delivery date:</string>
+    <string name="preciototal">Total amount:</string>
+    <string name="cargando">Loading</string>
+    <string name="pedidocreado">Created</string>
+    <string name="pedidoconfirmado">Confirmed</string>
+    <string name="pedidotransportado">Sent</string>
+    <string name="pedidoentregado">Delivered</string>
+    <string name="noentregado">Not delivered yet</string>
+    <string name="todos">All</string>
+    <string name="detalles">Details</string>
+    <string name="material">Material: </string>
+    <string name="genero">Gender: </string>
+    <string name="edad">Age: </string>
+    <string name="talles">Sizes: </string>
+    <string name="ocasion">Occasion: </string>
+    <string name="busqueda">Search:</string>
+    <string name="notification_title">Updated order : </string>
+    <string name="notification_chgloc">The order has changed its position.</string>
+    <string name="notification_chgstatus">The order has changed its status.</string>
+    <string name="notification_ticker">Order updated.</string>
+    <string name="drawer_open">Open Drawer</string>
+    <string name="drawer_close">Close Drawer</string>
+
+</resources>

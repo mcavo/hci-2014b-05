@@ -1,0 +1,126 @@
+label{
+  color: #626262;
+}
+
+#pago input{
+  margin-bottom:10px;
+  width: 95%;
+}
+
+#pago select{
+  margin-bottom: 10px;
+  width: 95%;
+}
+
+#direccion input{
+  margin-bottom:10px;
+  width: 95%;
+}
+
+#direccion select{
+  margin-bottom: 10px;
+  width: 95%;
+}
+
+#finalizar p{
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+#finalizar button{
+  margin-top: 10px;
+}
+
+.comprar{
+  margin: 0 30%;
+}
+
+.btn-breadcrumb .btn:not(:last-child):after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid white;
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  left: 100%;
+  z-index: 3;
+}
+.btn-breadcrumb .btn:not(:last-child):before {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 17px solid transparent;
+  border-bottom: 17px solid transparent;
+  border-left: 10px solid rgb(173, 173, 173);
+  position: absolute;
+  top: 50%;
+  margin-top: -17px;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 3;
+}
+
+/** The Spacing **/
+.btn-breadcrumb .btn {
+  padding:6px 12px 6px 24px;
+}
+.btn-breadcrumb .btn:first-child {
+  padding:6px 6px 6px 10px;
+}
+.btn-breadcrumb .btn:last-child {
+  padding:6px 18px 6px 24px;
+}
+
+/** Primary button **/
+.btn-breadcrumb .btn.btn-primary:not(:last-child):after {
+  border-left: 10px solid #428bca;
+}
+.btn-breadcrumb .btn.btn-primary:not(:last-child):before {
+  border-left: 10px solid #204261
+}
+.btn-breadcrumb .btn.btn-primary:hover:not(:last-child):after {
+  border-left: 10px solid #3071a9;
+}
+.btn-breadcrumb .btn.btn-primary:hover:not(:last-child):before {
+  border-left: 10px solid #285e8e;
+}
+
+.btn-primary {
+	border-color: #204261
+}
+
+#erroresdireccion{
+  margin-left: 6.5%;
+  width: 90%;
+  font-size: 13px !important;
+}
+#errorespago{
+  margin-left: 6.5%;
+  width: 90%;
+  font-size: 13px !important;
+} 
+
+#pagoefectivo{
+	font-size: 12px;
+}
+#direccion{
+	text-align: center;
+}
+#pago{
+	text-align: center;
+}
+#finalizar{
+	text-align: center;
+}
+#comprar{
+	margin-bottom: 4%;
+}
+#sombreado{
+  margin-top: 15%;
+  margin-bottom: 15%;
+}

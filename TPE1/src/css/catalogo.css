@@ -1,0 +1,90 @@
+.product-container {
+	max-height: 470px;
+	min-height: 470px;
+}
+
+h3 {
+	color: #626262;
+}
+
+div#productos > div > a > span.nuevo {
+	position: absolute;
+	left: 20px;
+	top: 3px;
+	font-size: 14px;
+}
+
+div#productos > div > a > span.oferta {
+	position: absolute;
+	right: 20px;
+	top: 3px;
+	font-size: 14px;
+}
+
+
+
+div#productos > div > a > img {
+	width: 198px;
+	height: 198px;
+}
+
+div#productos > div > a.thumbnail {
+	min-width: 208px;
+	min-height: 305px;
+	color: transparent;
+}
+
+div#productos > div > a > div > p {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+div#productos > div > a > div > p.oferta {
+	color: red; 
+}
+
+div#productos > div > a > div > p.oferta > del {
+	color: #333;
+}
+
+div#productos > div > a > div > h4 {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: avenir, sans-serif;
+	min-height: 45px;
+}
+
+div#productos > div > a > div > h5 {
+	font-size: 13px;
+	font-weight: bold;
+	font-family: avenir, sans-serif;
+	color: #2E618D;
+}
+
+.breadcrumb {
+	color: #2E618D;
+}
+
+.categories {
+	border-right: 1px solid #e5e5e5;
+	max-height: 613px;
+}
+
+.pagination {
+	margin: 0px !important;
+	padding-right: 2.6%;
+}
+
+.usarfiltro {
+	margin-bottom: 35%;
+}
+
+.offer div div h3 {
+	text-align: center;
+	color: #626262;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.prev, .next {
+	color: #285379;
+}

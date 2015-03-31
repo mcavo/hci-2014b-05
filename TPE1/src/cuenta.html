@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="img/logo.ico">
+		<title> Klosh </title>
+		<link href="./css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="./css/main.css" type="text/css" rel="stylesheet">
+		<link href="./css/cuenta.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+	<noscript>
+		<style type="text/css">
+		    .pagecontainer {display:none;}
+		</style>
+		<div class="noscriptmsg">
+		    <div class="col-md-12 col-sm-12" id="error-msg">
+		        <div class="alert alert-danger" role="alert">
+				Para utilizar las funcionalidades completas de este sitio es necesario tener
+				JavaScript habilitado. Aquí están las <a href="http://www.enable-javascript.com/es/"
+				target="_blank"> instrucciones para habilitar JavaScript en tu navegador web</a>.
+			</div>
+		    </div>
+		</div>
+	</noscript>
+	<div class="pagecontainer">
+		<!-- Header -->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="img/logo.png"/></a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control searchbar" placeholder="¿Qué está buscando?" name="search">
+						</div>
+						<button type="submit" class="btn btn-default" formaction="catalogo.html">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a id="carrito" data-toggle="tooltip" data-placement="top" title="Carrito"> <img alt="Carrito de compras" src="./img/icon-carrito.png"/> <span id="cantprod" class="badge">0</span> </a>
+						</li>
+						<li>
+							<button id="ingresar" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+								INGRESAR
+							</button>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+			<ul class="nav navbar-middle">
+				<li class="col-md-2"></li>
+				<li class="dropdown dropdown-large col-md-2">
+					<a class="dropdown-toggle btn menubutton btn-group" href="mujer.html"> M U J E R </a>
+					<ul class="dropdown-menu dropdown-menu-large row" style="display: none; " role="menu" id="botonmujer">
+						<!-- esto eran todos los menus antes de hacerlo dinamico-->
+					</ul>
+				</li>
+				<li class="col-md-1"></li>
+				<li class="dropdown dropdown-large col-md-2">
+					<a class="dropdown-toggle btn menubutton" href="hombre.html"> H O M B R E </a>
+					<ul class="dropdown-menu dropdown-menu-large row" style="display: none; " role="menu" id="botonhombre">
+					</ul>
+				</li>
+				<li class="col-md-1"></li>
+				<li class="dropdown dropdown-large col-md-2">
+					<a class="dropdown-toggle btn menubutton" href="ninio.html"> N I Ñ O </a>
+					<ul class="dropdown-menu dropdown-menu-large row" style="display: none; " role="menu" id="botonniño">
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		
+		<!--Container -->
+		<div class="row offer">
+			<!-- Opciones -->
+			<div class="col-md-4"></div>
+			<div class="col-md-2" id="account-menu">
+				<h3> MI CUENTA </h3>
+				<div class="well">
+					<p>
+						<a href="#info"> Mi Información</a>
+					</p>
+					<p>
+						<a href="#account-info"> Información de mi Cuenta</a>
+					</p>
+					<p>
+						<a href="#pedidos"> Mis Pedidos </a>
+					</p>
+					<p>
+						<a href="#direcciones"> Mi Libreta de Direcciones </a>
+					</p>
+					<p>
+						<a href="#medios"> Mis Medios de Pago </a>
+					</p>
+				</div>
+			</div>
+			<!-- Contenido -->
+			<div class="col-md-6">
+				<div id="info" class="col-md-12">
+					<div class="col-md-12">
+						<h3 >MI INFORMACIÓN</h3>
+					</div>
+					<div class="col-md-12 well">
+						<div class="col-md-11">
+							<dl class="dl-horizontal">
+								<dt>
+									Nombre/s:
+								</dt>
+								<dd id="firstname">
+								</dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>
+									Apellido/s:
+								</dt>
+								<dd id="lastname">
+								</dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>
+									Fecha de Nacimiento:
+								</dt>
+								<dd id="birth">
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div id="account-info" class="col-md-12">
+					<div class="col-md-12">
+						<h3 >INFORMACIÓN DE MI CUENTA</h3>
+					</div>
+					<div class="col-md-12 well">
+						<div class="col-md-11">
+							<dl class="dl-horizontal">
+								<dt>
+									Nombre de usuario:
+								</dt>
+								<dd id="username">
+								</dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>
+									Direccion de e-mail:
+								</dt>
+								<dd id="email">
+								</dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>
+									Fecha de creacion:
+								</dt>
+								<dd id="fechadecreacion">
+								</dd>
+							</dl>
+							<dl class="dl-horizontal">
+								<dt>
+									Último inicio sesión:
+								</dt>
+								<dd id="ultimoinicio">
+								</dd>
+							</dl>
+						</div>
+					</div>
+				</div>
+				<div id="pedidos" class="col-md-12">
+					<div class="col-md-12">
+						<h3> MIS PEDIDOS </h3>
+					</div>
+					<div class="col-md-12 well" id='listapedidos'></div>
+				</div>
+				<div id="direcciones" class="col-md-12">
+					<div id="direcciones" class="col-md-12">
+						<h3>MI LIBRETA DE DIRECCIONES</h3>
+					</div>
+					<div class="col-md-12 well" id='listadirecciones'>
+						<button class="btn btn-primary" data-toggle="modal" data-target="#myModal2">
+							AGREGAR DIRECCIÓN +
+						</button>
+					</div>
+				</div>
+				<div id="medios" class="col-md-12">
+					<div class="col-md-12">
+						<h3>MIS MEDIOS DE PAGO</h3>
+					</div>
+					<div class="col-md-12 well" id='listamediosdepago'>
+						<button class="btn btn-primary" data-toggle="modal" data-target="#myModal1" id ="agregarmedio">
+							AGREGAR MEDIO DE PAGO +
+						</button>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<!-- Footer -->
+		<div class="navbar-inverse navbar-static-bottom footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<h3>Seguinos</h3>
+						<ul>
+							<li>
+								<a href="construccionlog.html">Facebook</a>
+							</li>
+							<li>
+								<a href="construccionlog.html">Twitter</a>
+							</li>
+							<li>
+								<a href="construccionlog.html">Instagram</a>
+							</li>
+							<li>
+								<a href="construccionlog.html">Youtube</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h3>Klosh</h3>
+						<ul>
+							<li>
+								<a href="construccionlog.html">Cómo comprar</a>
+							</li>
+							<li>
+								<a href="construccionlog.html">Políticas de privacidad</a>
+							</li>
+							<li>
+								<a href="construccionlog.html">Plazos de entrega</a>
+							</li>
+							<li>
+								<a href="construccionlog.html">Términos y condiciones</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h3>Empresa</h3>
+						<ul>
+							<li>
+								<a href="construccionlog.html">Atención al cliente</a>
+							</li>
+							<li>
+								<a href="construccionlog.html">Institucional</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Agregar Medio de Pago-->
+		<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">AGREGAR MEDIO DE PAGO</h4>
+						<h4 class="datosObligatorios"> Todos los campos de la sección a completar son obligatorios. </h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for="inputNumero" class="col-sm-5 control-label">Número:</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputNumero" placeholder="Ej. 345675395829467">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputVencimiento" class="col-sm-5 control-label">Fecha de vencimiento:</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputVencimiento" placeholder="Ej. 2016-04">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputSeguridad" class="col-sm-5 control-label">Código de seguridad:</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputSeguridad" placeholder="Ej. 3514">
+								</div>
+							</div>
+							<div class="form-group">
+								<ul id="errorespago" class="list-group">
+							 		
+								</ul>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-7 col-sm-5">
+									<button  class="btn btn-primary" type="button" id="agregarmediodepago">
+										AGREGAR
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Modal Agregar Dirección-->
+		<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">AGREGAR DIRECCIÓN</h4>
+						<h4 class="datosObligatorios"> Los campos obligatorios poseen un asterisco (*). </h4>
+					</div>
+					<div class="modal-body">
+						<form class="form-horizontal" role="form">
+							<div class="form-group">
+								<label for="inputNombre" class="col-sm-5 control-label">Nombre *</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputNombre" placeholder="Ej.: Trabajo">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputCalle" class="col-sm-5 control-label">Calle *</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputCalle" placeholder="Ej.: Av. Eduardo Madero">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPuerta" class="col-sm-5 control-label">Puerta *</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputPuerta" placeholder="Ej.: 333">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPiso" class="col-sm-5 control-label">Piso</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputPiso" placeholder="Ej.: 1">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputDepartamento" class="col-sm-5 control-label">Departamento</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputDepartamento" placeholder="Ej.: A">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputProvincia" class="col-sm-5 control-label">Provincia *</label>
+								<div class="col-sm-7">
+									<select id="provv" class="form-control">
+									</select>
+								</div>
+							</div>
+							<div class="form-group hide" id="ciudad">
+								<label for="inputCiudad" class="col-sm-5 control-label">Ciudad *</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputCiudad" placeholder="Ej.: San Isidro">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputTelefono" class="col-sm-5 control-label">Código postal *</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputCP" placeholder="Ej.: 1611">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputUsuario" class="col-sm-5 control-label">Teléfono *</label>
+								<div class="col-sm-7">
+									<input type="usuario" class="form-control" id="inputTelefono" placeholder="Ej.: 4799-7369">
+								</div>
+							</div>
+							<div class="form-group">
+								<ul id="erroresdireccion" class="list-group">
+							 		
+								</ul>
+							</div>
+							<div class="form-group">
+								<div class="col-sm-offset-7 col-sm-5">
+									<button  class="btn btn-primary" type="button" id="agregardireccion">
+										AGREGAR
+									</button>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/cuenta.js"></script>
+		<script src="js/main.js"></script>
+	</div>
+	</body>
+</html>
+

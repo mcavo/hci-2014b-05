@@ -1,0 +1,65 @@
+#account-menu {
+	position: fixed;
+	top: 100px;
+	left: 0;
+	margin-left: 8%;
+}
+
+#account-menu h3 {
+	margin-left: 20px;
+}
+
+#account-menu h3 {
+	margin-bottom: 15px;
+	color: #626262; 
+}
+
+.info-container {
+	border-radius: 5px;
+	border: 1px solid #e3e3e3;
+	background-color: #f5f5f5;
+}
+
+.offer h3 {
+	color: #626262; 
+}
+
+dt, dd, i .glyphicon-pencil {
+	color: #626262;
+}
+
+hr {
+	border-top-color: #e2e2e2;
+}
+
+.myContainer {
+	padding: 15px;
+	background-color: white;
+	border-radius: 5px;
+	border: 1px solid #e3e3e3;
+	margin-top: 8px;
+}
+
+.product-delete{
+	background-color: #626262;
+	border-color: #626262;
+}
+
+#agregarmediodepago{
+	float: right;
+}
+
+#agregardireccion{
+	float: right;
+}
+
+#erroresdireccion{
+	margin-left: 6.5%;
+	width: 90%;
+	font-size: 13px !important;
+}
+#errorespago{
+	margin-left: 6.5%;
+	width: 90%;
+	font-size: 13px !important;
+}

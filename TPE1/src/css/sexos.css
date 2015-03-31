@@ -1,0 +1,47 @@
+.title {
+	background-color: #282828;
+	text-align: center;
+	margin-top: 12px;
+	border-radius: 5px;
+	font-size: 10px;
+}
+
+.title h4 {
+	color: white;
+}
+.item {
+	text-align: center;
+}
+
+.carousel{
+	margin: 20px 0px;
+}
+
+.carousel-inner .active.left {
+	left: -33%;
+}
+.carousel-inner .next {
+	left: 33%;
+}
+.carousel-inner .prev {
+	left: -33%;
+}
+.carousel-control .left, .carousel-control .right {
+	background-image: none;
+}
+
+.categorycontainer a{
+}
+
+.thumbnail{
+	margin-left: 2.5%;
+	margin-right: 2.5%;
+	margin-top: 10px;
+	width: 20%;
+}
+
+.thumbnail img {
+	-moz-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}

@@ -1,0 +1,192 @@
+div#nuevo > div > a > span.nuevo , div#oferta > div > a > span.nuevo {
+	position: absolute;
+	left: 20px;
+	top: 3px;
+	font-size: 16px;
+}
+
+div#nuevo > div > a > div > p.oferta , div#oferta > div > a > div > p.oferta {
+	color: red; 
+}
+
+div > a > div > p.oferta > del {
+	color: #333;
+}
+
+div#nuevo > div > a > span.oferta , div#oferta > div > a > span.oferta {
+	position: absolute;
+	right: 20px;
+	top: 3px;
+	font-size: 16px;
+}
+
+.grid {
+	max-width: 1300px;
+	margin: 0 auto;
+	list-style: none;
+	text-align: center;
+}
+
+.grid li {
+	display: inline-block;
+	margin: 0;
+	text-align: left;
+	position: relative;
+}
+
+.grid figure {
+	margin: 0;
+	position: relative;
+}
+
+ul.grid li figure img {
+	min-height: 325px;
+}
+
+.grid figure img {
+	max-width: 100%;
+	display: block;
+	position: relative;
+	max-height: 308px;
+}
+
+.grid figcaption {
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 20px;
+	background: #000000;
+	color: #269ABC;
+}
+
+.grid figcaption h4 {
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	margin-bottom: 6px;
+}
+
+.grid figcaption span:before {
+	content: ' ';
+}
+
+.grid figcaption a {
+	text-align: center;
+	padding: 5px 10px;
+	border-radius: 2px;
+	display: inline-block;
+	background: #ed4e6e;
+	color: #fff;
+}
+
+.cs-style-3 figure {
+	overflow: hidden;
+}
+
+.cs-style-3 figure img {
+	-webkit-transition: -webkit-transform 0.4s;
+	-moz-transition: -moz-transform 0.4s;
+	transition: transform 0.4s;
+	height: 316px;
+}
+
+.no-touch .cs-style-3 figure:hover img,
+.cs-style-3 figure.cs-hover img {
+	-webkit-transform: translateY(-50px);
+	-moz-transform: translateY(-50px);
+	-ms-transform: translateY(-50px);
+	transform: translateY(-50px);
+}
+
+.cs-style-3 figcaption {
+	height: 100px;
+	width: 100%;
+	top: auto;
+	bottom: 0;
+	opacity: 0;
+	-webkit-transform: translateY(100%);
+	-moz-transform: translateY(100%);
+	-ms-transform: translateY(100%);
+	transform: translateY(100%);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s 0.3s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s 0.3s;
+	transition: transform 0.4s, opacity 0.1s 0.3s;
+}
+
+.no-touch .cs-style-3 figure:hover figcaption,
+.cs-style-3 figure.cs-hover figcaption {
+	opacity: 1;
+	-webkit-transform: translateY(0px);
+	-moz-transform: translateY(0px);
+	-ms-transform: translateY(0px);
+	transform: translateY(0px);
+	-webkit-transition: -webkit-transform 0.4s, opacity 0.1s;
+	-moz-transition: -moz-transform 0.4s, opacity 0.1s;
+	transition: transform 0.4s, opacity 0.1s;
+}
+
+.cs-style-3 figcaption a {
+	position: absolute;
+	bottom: 20px;
+	right: 20px;
+}
+
+*, *:after, *:before { -webkit-box-sizing: border-box; -moz-box-sizing: border-box; box-sizing: border-box; }
+
+/* Clearfix hack by Nicolas Gallagher: http://nicolasgallagher.com/micro-clearfix-hack/ */
+.clearfix:before, .clearfix:after { content: " "; display: table; }
+.clearfix:after { clear: both; }
+
+@media screen and (max-width: 31.5em) {
+	.grid {
+		padding: 10px 10px 100px 10px;
+	}
+	.grid li {
+		width: 100%;
+		min-width: 300px;
+	}
+}
+
+.title {
+	background-color: #282828;
+	text-align: center;
+	margin-top: 12px;
+	border-radius: 5px;
+	font-size: 10px;
+}
+
+.title h4 {
+	color: white;
+}
+
+div#nuevo> div > a > div > h5, div#oferta > div > a > div > h5 {
+	font-size: 13px;
+	font-weight: bold;
+	font-family: avenir, sans-serif;
+	color: #2E618D;
+}
+
+
+
+
+div#nuevo > div , div#oferta > div{
+	margin-top: 10px;
+
+}
+
+div#nuevo > div > a.thumbnail, div#oferta > div > a.thumbnail {
+	color: transparent;
+	min-height:350px;
+}
+
+div#nuevo> div > a > div > p, div#oferta > div > a > div > p {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+div#nuevo> div > a > div > h4, div#oferta > div > a > div > h4 {
+	font-size: 14px;
+	font-weight: bold;
+	font-family: avenir, sans-serif;
+	min-height:30px;
+}

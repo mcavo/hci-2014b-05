@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.klosh"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="21" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/klosh"
+        android:label="@string/klosh"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="klosh.MainActivity"
+            android:label="@string/klosh" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="klosh.HombreActivity"
+            android:label="@string/hombre" >
+        </activity>
+        <activity
+            android:name="klosh.MujerActivity"
+            android:label="@string/mujer" >
+        </activity>
+        <activity
+            android:name="klosh.NinioActivity"
+            android:label="@string/ninio" >
+        </activity>
+        <activity
+            android:name="user.IngresarActivity"
+            android:label="@string/iniciar" >
+        </activity>
+        <activity
+            android:name="user.InformacionActivity"
+            android:label="@string/micuenta"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="catalogo.CatalogoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
+        </activity>
+        <activity
+            android:name="producto.ProductoActivity"
+            android:label="" >
+        </activity>
+
+        <receiver android:name="klosh.ServiceConfigurer" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" >
+                </action>
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="klosh.CheckOrders"
+            android:exported="false" >
+            <intent-filter>
+                <action android:name="CheckOrders" >
+                </action>
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

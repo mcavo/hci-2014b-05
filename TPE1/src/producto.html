@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="shortcut icon" href="img/logo.ico">
+		<title> Klosh </title>
+		<link href="./css/bootstrap.css" type="text/css" rel="stylesheet">
+		<link href="./css/main.css" type="text/css" rel="stylesheet">
+		<link href="./css/producto.css" type="text/css" rel="stylesheet">
+	</head>
+
+	<body>
+	<noscript>
+		<style type="text/css">
+		    .pagecontainer {display:none;}
+		</style>
+		<div class="noscriptmsg">
+		    <div class="col-md-12 col-sm-12" id="error-msg">
+		        <div class="alert alert-danger" role="alert">
+				Para utilizar las funcionalidades completas de este sitio es necesario tener
+				JavaScript habilitado. Aquí están las <a href="http://www.enable-javascript.com/es/"
+				target="_blank"> instrucciones para habilitar JavaScript en tu navegador web</a>.
+			</div>
+		    </div>
+		</div>
+	</noscript>
+	<div class="pagecontainer">
+		<!--Header-->
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+			<div class="container-fluid">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="index.html"><img src="img/logo.png"/></a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control searchbar" placeholder="¿Qué está buscando?" name="search">
+						</div>
+						<button type="submit" class="btn btn-default" formaction="catalogo.html">
+							<i class="glyphicon glyphicon-search"></i>
+						</button>
+					</form>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							<a id="carrito" data-toggle="tooltip" data-placement="top" title="Carrito"> <img alt="Carrito de compras" src="./img/icon-carrito.png"/> <span id="cantprod" class="badge">0</span> </a>
+						</li>
+						<li>
+							<button id="ingresar" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+								INGRESAR
+							</button>
+						</li>
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+			<ul class="nav navbar-middle">
+				<li class="col-md-2"></li>
+				<li class="dropdown dropdown-large col-md-2">
+					<a class="dropdown-toggle btn menubutton btn-group" href="mujer.html"> M U J E R </a>
+					<ul class="dropdown-menu dropdown-menu-large row" style="display: none; " role="menu" id="botonmujer">
+						<!-- esto eran todos los menus antes de hacerlo dinamico-->
+					</ul>
+				</li>
+				<li class="col-md-1"></li>
+				<li class="dropdown dropdown-large col-md-2">
+					<a class="dropdown-toggle btn menubutton" href="hombre.html"> H O M B R E </a>
+					<ul class="dropdown-menu dropdown-menu-large row" style="display: none; " role="menu" id="botonhombre">
+					</ul>
+				</li>
+				<li class="col-md-1"></li>
+				<li class="dropdown dropdown-large col-md-2">
+					<a class="dropdown-toggle btn menubutton" href="ninio.html"> N I Ñ O </a>
+					<ul class="dropdown-menu dropdown-menu-large row" style="display: none; " role="menu" id="botonniño">
+					</ul>
+				</li>
+			</ul>
+		</nav>
+		
+	
+		<div id="alerta" class="alert alert-success fade msgcart" data-alert="alert">
+			<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+			<strong>¡Bienvenido!</strong> Has ingresado exitósamente.
+		</div>
+
+		<div id="alerta2" class="alert alert-warning fade msgcart" data-alert="alert">
+			<strong>¡Espere! </strong>Debe ingresar con su cuenta para agregar al carrito.
+		</div>
+
+		<div id="alerta3" class="alert alert-success fade msgcart" data-alert="alert">
+			<strong>¡Enhorabuena! </strong>Se ha agregado al carrito.
+		</div>
+
+		<div id="alerta4" class="alert alert-danger fade msgcart" data-alert="alert">
+			<strong>¡Error! </strong>Intente en unos minutos.
+		</div>
+
+		<div id="alerta5" class="alert alert-warning fade msgcart" data-alert="alert">
+			<strong>¡Espere! </strong>Debe ingresar con su cuenta para ir al carrito.
+		</div>
+
+		<!-- Nombre y el boton de volver -->
+		<div class="offer display">
+
+			<!---->
+			<div class="row">
+				<div class="col-md-2"></div>
+				<h2 class="col-md-6" id="name"></h2>
+				<div class="col-md-1"></div>
+				<div class="col-md-1">
+					<div class="pull-right" id="backtosearch">
+						<button type="button" class="btn btn-default navbar-btn">
+							<span class="glyphicon glyphicon-chevron-left"></span> VOLVER
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<!--Contenido-->
+
+			<div class="row space">
+				<div class="col-md-2"></div>
+				<div class="col-md-1 views"></div>
+				<div class="col-md-3 view"></div>
+				<div class="col-md-1"></div>
+
+				<div class="col-md-4 info">
+					<form class="form-horizontal product-form" role="form">
+						<div class="form-group">
+							<label for="inputUsuario" class="col-sm-5">TALLE:</label>
+							<div class="col-sm-5">
+								<select id="talle" class="form-control"></select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputcolor" class="col-sm-5">COLOR:</label>
+							<div class="col-sm-5">
+								<select id="color" class="form-control"></select>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="inputCantidad" class="col-sm-5">CANTIDAD:</label>
+							<div class="col-sm-5">
+								<select id="quantity" class="form-control">
+									<option value="1">1</option>
+									<option value="2">2</option>
+									<option value="3">3</option>
+									<option value="4">4</option>
+									<option value="5">5</option>
+								</select>
+							</div>
+						</div>
+						<div class="row"> 
+							<div class="col-md-4 etiqueta">
+								<p>PRECIO:</p>
+							</div>
+							<div class="col-md-8">
+								<p id="price"></p>
+							</div>
+						</div>
+						<div class="row precio">
+							<hr class="col-md-8"/>
+						</div>
+						<div class="row">
+							<div class="col-md-4 etiqueta">
+								<p>SUBTOTAL:</p>
+							</div>
+							<div class="col-md-8">
+								<p id="subtotal"></p>
+							</div>
+						</div>
+						<div class="row">
+							<button type="button" id="addtocart" class="btn btn-primary">
+								<span class="glyphicon glyphicon-shopping-cart"></span> AGREGAR AL CARRITO<span class="glyphicon glyphicon-chevron-right"></span>
+							</button>
+						</div>
+					</form>
+
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-9 info">
+					<h3 class="subtitulo">DESCRIPCIÓN</h3>
+					<p id="marca">
+						<i>Marca: </i> 
+					</p>
+					<p id="material">
+						<i>Material: </i>
+					</p>
+					<p id="genero">
+						<i>Género: </i> 
+					</p>
+					<p id="edad">
+						<i>Edad: </i> 
+					</p>
+					<p id="ocasion">
+						<i>Ocasión: </i> 
+					</p>
+					
+					
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div class="col-md-9 info">
+					<h3 class="subtitulo">USUARIOS QUE HAN COMPRADO ESTO SUGIEREN:</h3>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-2"></div>
+				<div id="comentarios" class="col-md-9">
+					<div class="panel-group" id="accordion">
+						<div class="panel panel-default panel-primary">
+							<div class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">FANDEKLOSH86<i class="glyphicon glyphicon-thumbs-up"></i></a></h4>
+							</div>
+							<div id="collapseOne" class="panel-collapse collapse in">
+								<div class="panel-body">
+									<p>
+										¡Me encanta! Me llevaría todo.
+									</p>
+								</div>
+							</div>
+							<div class="panel-heading">
+								<h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">ADICTOALAMODA<i class="glyphicon glyphicon-thumbs-down"></i></a></h4>
+							</div>
+							<div id="collapseTwo" class="panel-collapse collapse">
+								<div class="panel-body">
+									<p>
+										Muy mala calidad. No vuelvo a comprar nada de ésta marca.
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!---->
+		</div>
+		<div class="navbar-inverse navbar-static-bottom footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-2"></div>
+					<div class="col-md-3">
+						<h3>Seguinos</h3>
+						<ul>
+							<li>
+								<a href="construccion.html">Facebook</a>
+							</li>
+							<li>
+								<a href="construccion.html">Twitter</a>
+							</li>
+							<li>
+								<a href="construccion.html">Instagram</a>
+							</li>
+							<li>
+								<a href="construccion.html">Youtube</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h3>Klosh</h3>
+						<ul>
+							<li>
+								<a href="construccion.html">Cómo comprar</a>
+							</li>
+							<li>
+								<a href="construccion.html">Políticas de privacidad</a>
+							</li>
+							<li>
+								<a href="construccion.html">Plazos de entrega</a>
+							</li>
+							<li>
+								<a href="construccion.html">Términos y condiciones</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h3>Empresa</h3>
+						<ul>
+							<li>
+								<a href="construccion.html">Atención al cliente</a>
+							</li>
+							<li>
+								<a href="construccion.html">Institucional</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Inicio de Modal -->
+		<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-dialog modal-lg">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">
+							<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+						</button>
+						<h4 class="modal-title" id="myModalLabel">INGRESAR</h4>
+						<h4 id="datosObligatorios"> Todos los campos de la sección a completar son obligatorios. </h4>
+					</div>
+					<div class="modal-body col-md-12">
+						<div class="row col-md-6">
+							<div class="col-md-12">
+								<h3> SOY USUARIO</h3>
+							</div>
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="inputUsuario" class="col-sm-5 control-label">Nombre de usuario</label>
+									<div class="col-sm-7">
+										<input type="usuario" class="form-control" id="inputUsuario3" placeholder="Usuario" name="inputUsuario3">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputContraseña" class="col-sm-5 control-label">Contraseña</label>
+									<div class="col-sm-7">
+										<input type="password" class="form-control" id="inputContraseña3" placeholder="Contraseña" name="inputContraseña3">
+									</div>
+								</div>
+								<div class="form-group">
+										<ul id="errores1" class="list-group">
+								 		
+										</ul>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-5 col-sm-5">
+										<button type="button" id="ingresar3" class="btn btn-primary">
+											Ingresar
+										</button>
+									</div>
+								</div>
+								<p>
+									<a class="col-md-offset-6 col-md-6" href="construccion.html">Olvidé mi contraseña</a>
+								</p>
+							</form>
+						</div>
+						<div id="columna2" class="row col-md-6">
+							<div class="col-md-12">
+								<h3> SOY NUEVO AQUÍ</h3>
+							</div>
+							<form class="form-horizontal" role="form">
+								<div class="form-group">
+									<label for="inputUsuario" class="col-sm-5 control-label">Nombre de usuario</label>
+									<div class="col-sm-7">
+										<input type="usuario" class="form-control" id="inputUsuario" placeholder="Ej.: fandeklosh94">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputContraseña" class="col-sm-5 control-label">Contraseña</label>
+									<div class="col-sm-7">
+										<input type="password" class="form-control" id="inputContraseña" placeholder="Contraseña">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputContraseña" class="col-sm-5 control-label">Repetir contraseña</label>
+									<div class="col-sm-7">
+										<input type="password" class="form-control" id="inputContraseña2" placeholder="Repetir contraseña">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputNombre" class="col-sm-5 control-label">Nombre</label>
+									<div class="col-sm-7">
+										<input type="nombre" class="form-control" id="inputNombre" placeholder="Ej.: Mario">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputApellido" class="col-sm-5 control-label">Apellido</label>
+									<div class="col-sm-7">
+										<input type="apellido" class="form-control" id="inputApellido" placeholder="Ej.: Perez">
+									</div>
+								</div>
+								<div class="form-group">
+									<label class="col-sm-5 control-label">Género</label>
+									<label class="radio-inline col-sm-3">
+										<input type="radio" checked="checked" name="GeneroRadioOptions" id="radio1" value="option1">
+										Masculino </label>
+									<label class="radio-inline">
+										<input type="radio" name="GeneroRadioOptions" id="radio2" value="option2">
+										Femenino </label>
+								</div>
+								<div class="form-group">
+									<label for="inputDNI" class="col-sm-5 control-label">D.N.I.</label>
+									<div class="col-sm-7">
+										<input type="dni" class="form-control" id="inputDNI" placeholder="Ej.: 35.678.993">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="inputBirth" class="col-sm-5 control-label">Fecha nacimiento</label>
+									<div class="col-sm-7">
+										<input type="birth" class="form-control" id="inputBirth" placeholder="Ej.: 1994-05-23">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="inputEmail" class="col-sm-5 control-label">E-mail</label>
+									<div class="col-sm-7">
+										<input type="email" class="form-control" id="inputEmail" placeholder="Ej.: marioperez@gmail.com">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="inputEmail" class="col-sm-5 control-label">Repetir e-mail</label>
+									<div class="col-sm-7">
+										<input type="email" class="form-control" id="inputEmail2" placeholder="Repetir e-mail">
+									</div>
+								</div>
+								<div class="form-group">
+										<ul id="errores2" class="list-group">
+								 		
+										</ul>
+								</div>
+								<div class="form-group">
+									<div class="col-sm-offset-7 col-sm-5">
+										<button type="button" id="registrarse" class="btn btn-primary">
+											Registrarse
+										</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+					<div class="modal-footer"></div>
+				</div>
+			</div>
+		</div>
+		<!-- Fin de Modal -->
+
+		<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+		<script src="js/bootstrap.min.js"></script>
+		<script src="js/carousel.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/producto.js"></script>
+	</div>
+	</body>
+
+</html>
+

@@ -1,0 +1,123 @@
+#display {
+	color: #626262;
+	margin-bottom: 15px;
+}
+
+.space {
+	margin-top: 15px;
+}
+
+.views{
+	margin-right: 15px;
+}
+
+.views > div {
+	height: 91px;
+	width: 91px;
+	border-radius: 5px;
+}
+
+.views > div > img {
+	height: 81px;
+	width: 81px;
+	border-radius: 5px;
+}
+
+.view {
+	height: 315px;
+	width: 315px;
+	border-radius: 5px;
+}
+
+.view img {
+	height: 305px;
+	width: 305px;
+}
+
+#display h2{
+	font-size: 28px;
+	vertical-align: middle;
+}
+
+#backtosearch {
+	vertical-align: middle;
+	float: right;
+}
+
+#addtocart span{
+	color: white;	
+}
+
+#fotos {
+	position: relative;
+	float: left;
+}
+
+#fotos img{
+	border: solid;
+	max-width: 83%;
+	max-height: 83%;
+	border-radius: 10px;
+}
+
+.texto{
+	display: inline;
+}
+
+.info{
+	display: inline;
+}
+
+.info h3{
+	vertical-align: middle;
+}
+
+.precio{
+	text-align: left;
+}
+
+.precio p{
+	text-align: right;
+	font-size: 14px;
+}
+
+.container ul{
+	list-style: none;
+}
+
+.etiqueta{
+	font-weight: bold;
+}
+
+#tocart{
+	font-size: 18px;
+}
+
+#comentarios a span{
+	float: right;
+}
+
+#price, #subtotal{
+	text-align: middle;
+}
+
+
+
+.subtitulo{
+	color: #626262;
+}
+
+.glyphicon-chevron-right{
+	color:white;
+	margin-left: 5px;
+}
+
+.glyphicon-thumbs-up{
+	color: white;
+	float: right;
+}
+
+.glyphicon-thumbs-down{
+	color: white;
+	float: right;
+}

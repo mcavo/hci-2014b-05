@@ -1,0 +1,164 @@
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <FrameLayout
+        android:id="@+id/content_frame"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="false"
+        android:longClickable="false"
+        android:orientation="vertical" >
+
+        <ScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" >
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <ImageButton
+                    android:id="@+id/mujer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/mujerDesc"
+                    android:onClick="sendMessageMujer"
+                    android:src="@drawable/mujer" />
+
+                <TextView
+                    android:id="@+id/mujerText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/mujer"
+                    android:layout_alignLeft="@+id/mujer"
+                    android:layout_alignRight="@+id/mujer"
+                    android:layout_alignTop="@+id/mujer"
+                    android:paddingLeft="40dp"
+                    android:paddingTop="85dp"
+                    android:text="@string/mujer"
+                    android:textColor="#000000"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/ninio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/hombre"
+                    android:contentDescription="@string/ninioDesc"
+                    android:onClick="sendMessageNinio"
+                    android:src="@drawable/ninio" />
+
+                <TextView
+                    android:id="@+id/ninioText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ninio"
+                    android:layout_alignLeft="@+id/ninio"
+                    android:layout_alignRight="@+id/ninio"
+                    android:layout_alignTop="@+id/ninio"
+                    android:paddingLeft="45dp"
+                    android:paddingTop="85dp"
+                    android:text="@string/ninio"
+                    android:textColor="#000000"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/hombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/mujer"
+                    android:contentDescription="@string/hombreDesc"
+                    android:onClick="sendMessageHombre"
+                    android:src="@drawable/hombre" />
+
+                <TextView
+                    android:id="@+id/hombreText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/hombre"
+                    android:layout_alignLeft="@+id/hombre"
+                    android:layout_alignRight="@+id/hombre"
+                    android:layout_alignTop="@+id/hombre"
+                    android:paddingLeft="200dp"
+                    android:paddingTop="85dp"
+                    android:text="@string/hombre"
+                    android:textColor="#000000"
+                    android:textSize="26sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/novedades"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_below="@+id/ninio"
+                    android:contentDescription="@string/novedadesDesc"
+                    android:onClick="sendMessageNovedades"
+                    android:src="@drawable/novedades" />
+
+                <TextView
+                    android:id="@+id/novedadesText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/novedades"
+                    android:layout_alignLeft="@+id/novedades"
+                    android:layout_alignRight="@+id/novedades"
+                    android:layout_alignTop="@+id/novedades"
+                    android:paddingLeft="35dp"
+                    android:paddingTop="45dp"
+                    android:text="@string/novedades"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <ImageButton
+                    android:id="@+id/ofertas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_below="@+id/ninio"
+                    android:contentDescription="@string/ofertasDesc"
+                    android:onClick="sendMessageOfertas"
+                    android:src="@drawable/ofertas" />
+
+                <TextView
+                    android:id="@+id/ofertasText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/ofertas"
+                    android:layout_alignLeft="@+id/ofertas"
+                    android:layout_alignRight="@+id/ofertas"
+                    android:layout_alignTop="@+id/ofertas"
+                    android:paddingLeft="45dp"
+                    android:paddingTop="45dp"
+                    android:text="@string/ofertas"
+                    android:textColor="#000000"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+        </ScrollView>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/left_drawer"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="#808080"
+        android:choiceMode="singleChoice"
+        android:divider="@android:color/white"
+        android:dividerHeight="0.5dp" />
+
+</android.support.v4.widget.DrawerLayout>
